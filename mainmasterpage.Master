@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mainmasterpage.master.cs" Inherits="Main_project.mainmasterpage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Peak Gym</title>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('image/gymbackground.jpeg'); /* Correct folder name here */
+            background-size: cover;
+            background-repeat: repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0 20px;
+            background-color: rgba(0, 0, 0, 0.3); /* black horizontal bar */
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .main-content {
+            padding: 20px;
+            min-height: 600px;
+            background-color: rgba(0, 0, 0, 0.3); /* light black overlay */
+
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .auto-style1 {
+            height: 58px;
+        }
+        .auto-style2 {
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header with Logo + Top Content -->
+        <div class="header">
+            <div class="auto-style1">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/image/peak-logo-removebg-preview.png" AlternateText="Logo" Height="96px" Width="100px" CssClass="auto-style2" ImageAlign="Top" />
+            </div>
+            <div class="nav-bar">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" />
+        </div>
+    </form>
+</body>
+</html>
